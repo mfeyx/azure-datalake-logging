@@ -1,6 +1,6 @@
 [project]
 name = "azure-datalake-logging"
-version = "0.2.2"
+version = "1.0.0"
 description = "Write your logs to Azure Storage (e.g., Blob, Queue, and Table)"
 readme = "README.md"
 authors = [{ name = "Markus Feiks", email = "pypi.packages@feyx.de" }]

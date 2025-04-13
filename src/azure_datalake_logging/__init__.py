@@ -113,5 +113,5 @@ __all__ = [
 
 __version__ = version("azure-datalake-logging")
 __author__ = "Markus Feiks"
-__status__ = "development"
+__status__ = "production"
 __date__ = "2025-04-13"
