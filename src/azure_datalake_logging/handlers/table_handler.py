@@ -183,9 +183,19 @@ class DatalakeTableHandler(StreamHandler):
             Dictionary formatted as an Azure Table Storage entity
         """
         message = data.pop("message")
+
+        # Handle both string messages and stringified Python dictionaries
+        try:
+            # Try to evaluate as a Python literal (dict, list, etc.)
+            parsed_message = literal_eval(message)
+            message = json.dumps(parsed_message)
+        except (ValueError, SyntaxError):
+            # If it's not a valid Python literal, treat as plain string
+            message = json.dumps(message)
+
         return {
             "PartitionKey": self.part_key,
             "RowKey": create_id(),
             **data,
-            "message": json.dumps(literal_eval(message)),
+            "message": message,
         }
