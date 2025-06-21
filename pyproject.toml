@@ -1,6 +1,6 @@
 [project]
 name = "azure-datalake-logging"
-version = "1.0.0"
+version = "1.0.1"
 description = "Write your logs to Azure Storage (e.g., Blob, Queue, and Table)"
 readme = "README.md"
 authors = [{ name = "Markus Feiks", email = "pypi.packages@feyx.de" }]
@@ -75,6 +75,7 @@ select = [
     "UP",   # pyupgrade
     "W",    # pycodestyle Warning
     "YTT",  # flake8-2020
+    "LOG",
 
     # "ANN",  # flake8-annotations
     # "FBT",  # flake8-boolean-trap (FBT)
